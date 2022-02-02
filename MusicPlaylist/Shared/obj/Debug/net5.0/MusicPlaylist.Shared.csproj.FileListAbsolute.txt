@@ -1,0 +1,12 @@
+C:\Users\Asus\source\repos\MusicPlaylist\MusicPlaylist\Shared\bin\Debug\net5.0\MusicPlaylist.Shared.deps.json
+C:\Users\Asus\source\repos\MusicPlaylist\MusicPlaylist\Shared\bin\Debug\net5.0\MusicPlaylist.Shared.dll
+C:\Users\Asus\source\repos\MusicPlaylist\MusicPlaylist\Shared\bin\Debug\net5.0\ref\MusicPlaylist.Shared.dll
+C:\Users\Asus\source\repos\MusicPlaylist\MusicPlaylist\Shared\bin\Debug\net5.0\MusicPlaylist.Shared.pdb
+C:\Users\Asus\source\repos\MusicPlaylist\MusicPlaylist\Shared\obj\Debug\net5.0\MusicPlaylist.Shared.csproj.AssemblyReference.cache
+C:\Users\Asus\source\repos\MusicPlaylist\MusicPlaylist\Shared\obj\Debug\net5.0\MusicPlaylist.Shared.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Asus\source\repos\MusicPlaylist\MusicPlaylist\Shared\obj\Debug\net5.0\MusicPlaylist.Shared.AssemblyInfoInputs.cache
+C:\Users\Asus\source\repos\MusicPlaylist\MusicPlaylist\Shared\obj\Debug\net5.0\MusicPlaylist.Shared.AssemblyInfo.cs
+C:\Users\Asus\source\repos\MusicPlaylist\MusicPlaylist\Shared\obj\Debug\net5.0\MusicPlaylist.Shared.csproj.CoreCompileInputs.cache
+C:\Users\Asus\source\repos\MusicPlaylist\MusicPlaylist\Shared\obj\Debug\net5.0\MusicPlaylist.Shared.dll
+C:\Users\Asus\source\repos\MusicPlaylist\MusicPlaylist\Shared\obj\Debug\net5.0\ref\MusicPlaylist.Shared.dll
+C:\Users\Asus\source\repos\MusicPlaylist\MusicPlaylist\Shared\obj\Debug\net5.0\MusicPlaylist.Shared.pdb

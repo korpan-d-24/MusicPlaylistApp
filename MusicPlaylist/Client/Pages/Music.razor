@@ -1,0 +1,88 @@
+﻿@page "/musics"
+@inject IMusicService MusicService
+@inject NavigationManager NavigationManager
+@implements IDisposable
+
+<h3>Musics</h3>
+
+@if (MusicService.Musics.Count == 0)
+{
+    <span>
+        Loading Musics...
+    </span>
+}
+else
+{
+    <table class="table">
+        <tread>
+            <tr>
+                <th>Song Name</th>
+                <th>Album Name</th>
+                <th>Group Name</th>
+                <th>Release Year</th>
+                <th>Music Style</th>
+                <th>Link to music</th>
+                <th></th>
+                <th></th>
+                <th></th>
+            </tr>
+        </tread>
+        <tbody>
+            @foreach (var music in MusicService.Musics)
+            {
+                <tr>
+                    <td>@music.SongName</td>
+                    <td>@music.AlbumName</td>
+                    <td>@music.GroupName</td>
+                    <td>@music.ReleaseYear</td>
+                    <td>@music.MusicStyle.NameOfStyle</td>
+                    <td>@music.Url</td>
+                    <td>
+                        <button class="btn btn-primary" @onclick="(() => ShowMusic(music.Id))">Show</button>
+                    </td>
+                    <td>
+                        <button class="btn btn-primary" @onclick="(() => EditMusic(music.Id))">Edit</button>
+                    </td>
+                    <td>
+                        <button class="btn btn-primary" @onclick="(() => DeleteMusic(music.Id))">Delete</button>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+<EditMusicDetail Song="musicToEdit"></EditMusicDetail>
+
+@code {
+    //List<MusicListApp.Shared.Music> musics = new List<MusicListApp.Shared.Music>();
+
+    MusicPlaylist.Shared.Music musicToEdit = new MusicPlaylist.Shared.Music();
+
+    protected override async Task OnInitializedAsync()
+    {
+        await MusicService.GetMusics();
+        MusicService.OnChange += StateHasChanged;
+    }
+
+
+    void ShowMusic(int id)
+    {
+        NavigationManager.NavigateTo($"musics/{id}");
+    }
+
+    void EditMusic(int id)
+    {
+        musicToEdit = MusicService.Musics.Find(m => m.Id == id);
+    }
+
+    void DeleteMusic(int id)
+    {
+        MusicService.DeleteMusic(id);
+    }
+
+    public void Dispose()
+    {
+        MusicService.OnChange -= StateHasChanged;
+    }
+}

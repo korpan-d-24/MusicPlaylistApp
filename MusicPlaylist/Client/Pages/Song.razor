@@ -1,0 +1,25 @@
+﻿@page "/music/{id:int}"
+@inject IMusicService MusicService
+
+@if (song == null)
+{
+    <span>Song is loading...</span>
+}
+else
+{
+    <h3>Song name is @song.SongName</h3>
+}
+
+
+@code {
+    [Parameter]
+    public int Id { get; set; }
+
+    MusicPlaylist.Shared.Music song = null;
+
+    protected override async Task OnInitializedAsync()
+    {
+        song = await MusicService.GetMusic(Id);
+    }
+
+}
