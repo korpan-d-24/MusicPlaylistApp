@@ -7,12 +7,19 @@
   "linkerEnabled": false,
   "resources": {
     "assembly": {
+      "Humanizer.dll": "sha256-FemIqz6NhJAK6QVJ6zmarEUtVe3wEJ4G+hqbIn3f1MQ=",
       "Microsoft.AspNetCore.Authorization.dll": "sha256-v2n7Q6PfIiAvv9anCBl0llzwtdxr0iCZZar3ne8Bxds=",
       "Microsoft.AspNetCore.Components.dll": "sha256-jAjgCR5HlevP6ZX6aOgY1nmSw3my7LJ2d\/2r+K38zn4=",
       "Microsoft.AspNetCore.Components.Forms.dll": "sha256-YWF2OnontxkaiFcJmOM7wWFQhyWAPkjF+dSyH0okqQE=",
       "Microsoft.AspNetCore.Components.Web.dll": "sha256-wlznzoSBsthuKCVsTw7oKRamVbfJHFwP2yiYvSE6Ms4=",
       "Microsoft.AspNetCore.Components.WebAssembly.dll": "sha256-QsNziIE1fqEkctuuGPf+3m0MbOtwlF2DwxTJZ4daFFc=",
       "Microsoft.AspNetCore.Metadata.dll": "sha256-aNxhP+jeasQLwzuvRzMwQ4DqOtk2QaSs0lY4h\/WtLeM=",
+      "Microsoft.EntityFrameworkCore.dll": "sha256-Xmq0vpB2RATzST3H3vZXSEnF6aqslIuK6FaXXimDIrA=",
+      "Microsoft.EntityFrameworkCore.Abstractions.dll": "sha256-AIce7PrTgPt2mVnofQlgIPGIuby2nrUbypnl9Tp0FvA=",
+      "Microsoft.EntityFrameworkCore.Design.dll": "sha256-H761X0yKFBkX+\/CDuDpUPlr8dnPdNL460sQE2gTRpGg=",
+      "Microsoft.EntityFrameworkCore.Relational.dll": "sha256-0\/9spvRG645rtGf7At+7L9LDXIXdBPWvVvDOr0Ra0vw=",
+      "Microsoft.Extensions.Caching.Abstractions.dll": "sha256-8F+IGIkGOe\/XwyUAtYBpj9KWlp4ar1LN9ITSjDfuHSQ=",
+      "Microsoft.Extensions.Caching.Memory.dll": "sha256-AkvXroLZ0oSteEJuNkSxIb8fThRQVo0YfufKFdAwQEM=",
       "Microsoft.Extensions.Configuration.dll": "sha256-x9zYR1t1is\/fStNpBiQnXyPdMpLLcQcra3w4RXGSg4o=",
       "Microsoft.Extensions.Configuration.Abstractions.dll": "sha256-NYecKM0ZpUvzj4spvgi6xUu80rkx8PX7fiRok\/BNaHw=",
       "Microsoft.Extensions.Configuration.Binder.dll": "sha256-JFLIykah3r5WjvztBuVIaMM9wfVswDM+On6k\/QVgeeg=",
@@ -195,13 +202,13 @@
       "mscorlib.dll": "sha256-0qsbc1acYr3S6P7t9gSYyghOhMVs3CTJ9ukQ1VXqksY=",
       "netstandard.dll": "sha256-4Ejn1oHpeqmTQlJx7Kjuipn0ZVOoG0hGncN+9qyL1lo=",
       "System.Private.CoreLib.dll": "sha256-7n\/jioZu+\/2tD7v1RgjTTrBrviX+kVwPFGJ\/JBsHQGA=",
-      "MusicPlaylist.Shared.dll": "sha256-yLNUVVP5USGc7ONZMMA0W8psUTmjNzFHmU5nXcXn5gk=",
-      "MusicPlaylist.Client.dll": "sha256-hD7zcpnn0le6jB+c4Ew1xyQfk0s573n1bTzNegDVdEM="
+      "MusicPlaylist.Shared.dll": "sha256-e4MAka5WYFnn1D+yEbi3\/UfdAO8w81ET5Fmd9TwWVLs=",
+      "MusicPlaylist.Client.dll": "sha256-ZcJqvmllL4gHkmhu2x0KfCH7cn8ODaucUY6xvFX+deY="
     },
     "lazyAssembly": null,
     "pdb": {
-      "MusicPlaylist.Shared.pdb": "sha256-eXc6KXfC9d5q\/cHoGugALcQcxG8\/3svKnStgIhpnYek=",
-      "MusicPlaylist.Client.pdb": "sha256-9vCdPJhDwrO+JK7S3bKCLM2Tw3rXAbG7fEk+LjfxYVE="
+      "MusicPlaylist.Shared.pdb": "sha256-Xe7F16+tLSOJbtiKwv6CWUe11fqEbRxXrEXrn9yECc4=",
+      "MusicPlaylist.Client.pdb": "sha256-ovkn7pk1okoHtng1nqNk8nVUAH+eUmOtfMjup7VR9+A="
     },
     "runtime": {
       "dotnet.timezones.blat": "sha256-Uv0JiOiPEvlGxygIhcdY8XYm\/Nt+zgVckKrqB2uih0w=",

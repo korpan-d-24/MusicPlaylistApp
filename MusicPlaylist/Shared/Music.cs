@@ -20,6 +20,8 @@ namespace MusicPlaylist.Shared
 
         public MusicStyle MusicStyle { get; set; } = new MusicStyle();
 
+        public int MusicStyleId { get; set; }
+
         public string Url { get; set; }
     }
 }
