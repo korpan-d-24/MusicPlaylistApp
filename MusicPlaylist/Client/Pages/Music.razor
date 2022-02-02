@@ -30,23 +30,29 @@ else
         <tbody>
             @foreach (var music in MusicService.Musics)
             {
-                <tr>
-                    <td>@music.SongName</td>
-                    <td>@music.AlbumName</td>
-                    <td>@music.GroupName</td>
-                    <td>@music.ReleaseYear</td>
-                    <td>@music.MusicStyle.NameOfStyle</td>
-                    <td>@music.Url</td>
-                    <td>
-                        <button class="btn btn-primary" @onclick="(() => ShowMusic(music.Id))">Show</button>
-                    </td>
-                    <td>
-                        <button class="btn btn-primary" @onclick="(() => EditMusic(music.Id))">Edit</button>
-                    </td>
-                    <td>
-                        <button class="btn btn-primary" @onclick="(() => DeleteMusic(music.Id))">Delete</button>
-                    </td>
-                </tr>
+            <tr>
+                <td>@music.SongName</td>
+                <td>@music.AlbumName</td>
+                <td>@music.GroupName</td>
+                <td>@music.ReleaseYear</td>
+                <td>@music.MusicStyle.NameOfStyle</td>
+                <td>
+                    <div class="main">
+                        <div class="top-row px-4">
+                            <a href="@music.Url" target="_blank" class="ml-md-auto">Lisen</a>
+                        </div>
+                    </div>
+                </td>
+                <td>
+                    <button class="btn btn-primary" @onclick="(() => ShowMusic(music.Id))">Show</button>
+                </td>
+                <td>
+                    <button class="btn btn-primary" @onclick="(() => EditMusic(music.Id))">Edit</button>
+                </td>
+                <td>
+                    <button class="btn btn-primary" @onclick="(() => DeleteMusic(music.Id))">Delete</button>
+                </td>
+            </tr>
             }
         </tbody>
     </table>
@@ -55,8 +61,7 @@ else
 <EditMusicDetail Song="musicToEdit"></EditMusicDetail>
 
 @code {
-    //List<MusicListApp.Shared.Music> musics = new List<MusicListApp.Shared.Music>();
-
+    
     MusicPlaylist.Shared.Music musicToEdit = new MusicPlaylist.Shared.Music();
 
     protected override async Task OnInitializedAsync()

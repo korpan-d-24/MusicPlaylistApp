@@ -196,12 +196,12 @@
       "netstandard.dll": "sha256-4Ejn1oHpeqmTQlJx7Kjuipn0ZVOoG0hGncN+9qyL1lo=",
       "System.Private.CoreLib.dll": "sha256-7n\/jioZu+\/2tD7v1RgjTTrBrviX+kVwPFGJ\/JBsHQGA=",
       "MusicPlaylist.Shared.dll": "sha256-yLNUVVP5USGc7ONZMMA0W8psUTmjNzFHmU5nXcXn5gk=",
-      "MusicPlaylist.Client.dll": "sha256-+GJXAn+yAArthCTX2zuFEsyzZZEAfCaHPzze2abf6tA="
+      "MusicPlaylist.Client.dll": "sha256-hD7zcpnn0le6jB+c4Ew1xyQfk0s573n1bTzNegDVdEM="
     },
     "lazyAssembly": null,
     "pdb": {
       "MusicPlaylist.Shared.pdb": "sha256-eXc6KXfC9d5q\/cHoGugALcQcxG8\/3svKnStgIhpnYek=",
-      "MusicPlaylist.Client.pdb": "sha256-GZGlQq0B\/R9ZrDJo+BK4zxYFH4ctVsef6m8C3UREcaY="
+      "MusicPlaylist.Client.pdb": "sha256-9vCdPJhDwrO+JK7S3bKCLM2Tw3rXAbG7fEk+LjfxYVE="
     },
     "runtime": {
       "dotnet.timezones.blat": "sha256-Uv0JiOiPEvlGxygIhcdY8XYm\/Nt+zgVckKrqB2uih0w=",
