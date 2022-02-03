@@ -30,6 +30,15 @@ namespace MusicPlaylist.Server.Controllers
 
         public MusicsController(DataContext context)
         {
+            /// <summary>
+            /// Getsthe list notes
+            /// </summary>
+            /// <remarks>
+            /// Sample request:
+            /// GET /note
+            /// </remarks>
+            /// <returns></returns>
+
             _context = context;
         }
 

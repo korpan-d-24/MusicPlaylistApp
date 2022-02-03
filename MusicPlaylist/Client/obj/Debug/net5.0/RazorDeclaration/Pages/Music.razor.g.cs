@@ -105,7 +105,7 @@ using MusicPlaylist.Shared;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 63 "C:\Users\Asus\source\repos\MusicPlaylist\MusicPlaylist\Client\Pages\Music.razor"
+#line 64 "C:\Users\Asus\source\repos\MusicPlaylist\MusicPlaylist\Client\Pages\Music.razor"
        
     
     MusicPlaylist.Shared.Music musicToEdit = new MusicPlaylist.Shared.Music();
