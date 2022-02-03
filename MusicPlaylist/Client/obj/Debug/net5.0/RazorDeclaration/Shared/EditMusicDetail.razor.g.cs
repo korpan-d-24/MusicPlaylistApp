@@ -106,31 +106,33 @@ using MusicPlaylist.Shared;
 #nullable restore
 #line 47 "C:\Users\Asus\source\repos\MusicPlaylist\MusicPlaylist\Client\Shared\EditMusicDetail.razor"
                                                                     
-    [Parameter]
-    public MusicPlaylist.Shared.Music Song { get; set; } = new MusicPlaylist.Shared.Music();
-    int styleId = 1;
+[Parameter]
+public MusicPlaylist.Shared.Music Song { get; set; } = new MusicPlaylist.Shared.Music();
+int styleId = 1;
 
-    protected override async Task OnParametersSetAsync()
+protected override async Task OnParametersSetAsync()
+{
+    await MusicService.GetStyles();
+    styleId = Song.MusicStyle.Id;
+}
+
+async void HendeSubmit()
+{
+    Song.MusicStyle = null;
+    Song.MusicStyleId = styleId;
+
+    await JSRuntime.InvokeVoidAsync("console.log", Song);
+
+    if (Song.Id == 0)
     {
-        await MusicService.GetStyles();
-        styleId = Song.MusicStyle.Id;
+        await MusicService.CreateMusic(Song);
     }
 
-    async void HendeSubmit()
+    else
     {
-        Song.MusicStyle = MusicService.Styles.FirstOrDefault(s => s.Id == styleId);
-        await JSRuntime.InvokeVoidAsync("console.log", Song);
-
-        if (Song.Id == 0)
-        {
-            await MusicService.CreateMusic(Song);
-        }
-
-        else
-        {
-            await MusicService.UpdateMusic(Song, Song.Id);
-        }
+        await MusicService.UpdateMusic(Song, Song.Id);
     }
+}
 
 
 #line default

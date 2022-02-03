@@ -18,7 +18,7 @@ namespace MusicPlaylist.Shared
 
         public string ReleaseYear { get; set; }
 
-        public MusicStyle MusicStyle { get; set; } = new MusicStyle();
+        public MusicStyle MusicStyle { get; set; }
 
         public int MusicStyleId { get; set; }
 

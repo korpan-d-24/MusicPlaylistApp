@@ -6,6 +6,7 @@ using MusicPlaylist.Shared;
 using System.Net.Http;
 using System.Net.Http.Json;
 
+
 namespace MusicPlaylist.Client.Services
 {
     public class MusicService : IMusicService

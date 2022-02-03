@@ -4,6 +4,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using MusicPlaylist.Shared;
+using MusicPlaylist.Server.Data;
+using Microsoft.EntityFrameworkCore;
 
 namespace MusicPlaylist.Server.Controllers
 {
@@ -24,22 +26,34 @@ namespace MusicPlaylist.Server.Controllers
             new Music { Id = 2, SongName = "Catch The Rainbow", AlbumName = "Ritchie Blackmore's Rainbow", GroupName = "Rainbow", ReleaseYear = "1975", MusicStyle = styles[1], Url = "https://www.youtube.com/watch?v=V5QukAC-jqE"}
         };
 
+        private readonly DataContext _context;
+
+        public MusicsController(DataContext context)
+        {
+            _context = context;
+        }
+
         [HttpGet("styles")]
         public async Task<IActionResult> GetStyles()
         {
-            return Ok(styles);
+            return Ok(await _context.MusicStyles.ToListAsync());
         }
 
         [HttpGet]
         public async Task<IActionResult> GetMusic()
         {
-            return Ok(musics);
+            return base.Ok(await GetDbMusics());
+        }
+
+        private async Task<List<Music>> GetDbMusics()
+        {
+            return await _context.Musics.Include(ms => ms.MusicStyle).ToListAsync();
         }
 
         [HttpGet("{id}")]
         public async Task<IActionResult> GetSingleMusic(int id)
         {
-            var music = musics.FirstOrDefault(m => m.Id == id);
+            var music = await _context.Musics.Include(ms => ms.MusicStyle).FirstOrDefaultAsync(m => m.Id == id);
             if (music == null)
             {
                 return NotFound("Music was`t found");
@@ -50,36 +64,45 @@ namespace MusicPlaylist.Server.Controllers
         [HttpPost]
         public async Task<IActionResult> CreateMusicMusic(Music music)
         {
-            music.Id = musics.Max(m => m.Id + 1);
-            musics.Add(music);
-            return Ok(musics);
+            _context.Musics.Add(music);
+            await _context.SaveChangesAsync();
+
+            return Ok(await GetDbMusics());
         }
 
         [HttpPut("{id}")]
         public async Task<IActionResult> UpdateMusicMusic(Music music, int id)
         {
-            var dbMusic = musics.FirstOrDefault(m => m.Id == id);
+            var dbMusic = await _context.Musics.Include(ms => ms.MusicStyle).FirstOrDefaultAsync(m => m.Id == id);
             if (dbMusic == null)
             {
                 return NotFound("Music was`t found");
             }
-            var index = musics.IndexOf(dbMusic);
-            musics[index] = music;
 
-            return Ok(musics);
+            dbMusic.SongName = music.SongName;
+            dbMusic.AlbumName = music.AlbumName;
+            dbMusic.GroupName = music.GroupName;
+            dbMusic.ReleaseYear = music.ReleaseYear;
+            dbMusic.MusicStyleId = music.MusicStyleId;
+            dbMusic.Url = music.Url;
+
+            await _context.SaveChangesAsync();
+
+            return Ok(await GetDbMusics());
         }
 
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteMusicMusic(int id)
         {
-            var dbMusic = musics.FirstOrDefault(m => m.Id == id);
+            var dbMusic = await _context.Musics.Include(ms => ms.MusicStyle).FirstOrDefaultAsync(m => m.Id == id);
             if (dbMusic == null)
             {
                 return NotFound("Music was`t found");
             }
-            musics.Remove(dbMusic);
+            _context.Musics.Remove(dbMusic);
+            await _context.SaveChangesAsync();
 
-            return Ok(musics);
+            return Ok(await GetDbMusics());
         }
     }
 }

@@ -2,15 +2,17 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using MusicPlaylist.Server.Data;
 
 namespace MusicPlaylist.Server.Migrations
 {
     [DbContext(typeof(DataContext))]
-    partial class DataContextModelSnapshot : ModelSnapshot
+    [Migration("20220202224659_InitialMigration")]
+    partial class InitialMigration
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -48,38 +50,6 @@ namespace MusicPlaylist.Server.Migrations
                     b.HasIndex("MusicStyleId");
 
                     b.ToTable("Musics");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            AlbumName = "Heaven and Hell",
-                            GroupName = "Black Sabbath",
-                            MusicStyleId = 1,
-                            ReleaseYear = "1980",
-                            SongName = "Heaven and Hell",
-                            Url = "https://www.youtube.com/watch?v=RVUK2rtAkJE"
-                        },
-                        new
-                        {
-                            Id = 2,
-                            AlbumName = "Ritchie Blackmore's Rainbow",
-                            GroupName = "Rainbow",
-                            MusicStyleId = 2,
-                            ReleaseYear = "1975",
-                            SongName = "Catch The Rainbow",
-                            Url = "https://www.youtube.com/watch?v=V5QukAC-jqE"
-                        },
-                        new
-                        {
-                            Id = 3,
-                            AlbumName = "What a wonderful world",
-                            GroupName = "Louis Armstrong",
-                            MusicStyleId = 3,
-                            ReleaseYear = "1967",
-                            SongName = "What a wonderful world",
-                            Url = "https://www.youtube.com/watch?v=CWzrABouyeE"
-                        });
                 });
 
             modelBuilder.Entity("MusicPlaylist.Shared.MusicStyle", b =>
@@ -95,23 +65,6 @@ namespace MusicPlaylist.Server.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("MusicStyles");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            NameOfStyle = "Heavy metal"
-                        },
-                        new
-                        {
-                            Id = 2,
-                            NameOfStyle = "Rock 'n' Roll"
-                        },
-                        new
-                        {
-                            Id = 3,
-                            NameOfStyle = "Jazz"
-                        });
                 });
 
             modelBuilder.Entity("MusicPlaylist.Shared.Music", b =>
